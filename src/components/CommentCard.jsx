@@ -1,8 +1,31 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import profilePicAmy from "../images/avatars/image-amyrobson.png";
 import ButtonCard from "./ButtonCard";
 import "./CommentCard.css";
+import "data.json";
 const CommentCard = () => {
+  const [jsonData, setJsonData] = useState(null);
+
+  useEffect(() => {
+    // Fetch JSON data from data.json
+    const fetchData = async () => {
+      try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        setJsonData(data);
+      } catch (error) {
+        console.error('Error fetching JSON data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (!jsonData) {
+     <div>Loading...</div>;
+  }
+};
   return (
     <>
       <div className="card-container">
