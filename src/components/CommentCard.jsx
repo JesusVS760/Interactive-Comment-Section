@@ -1,9 +1,9 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import profilePicAmy from "../images/avatars/image-amyrobson.png";
 import ButtonCard from "./ButtonCard";
 import "./CommentCard.css";
-import "data.json";
+import data from "../data.json";
+
 const CommentCard = () => {
   const [jsonData, setJsonData] = useState(null);
 
@@ -11,11 +11,12 @@ const CommentCard = () => {
     // Fetch JSON data from data.json
     const fetchData = async () => {
       try {
-        const response = await fetch('data.json');
-        const data = await response.json();
+        // const response = await fetch('data.json');
+        // const data = await response.json();
+        // setJsonData(data);
         setJsonData(data);
       } catch (error) {
-        console.error('Error fetching JSON data:', error);
+        console.error("Error fetching JSON data:", error);
       }
     };
 
@@ -23,9 +24,11 @@ const CommentCard = () => {
   }, []);
 
   if (!jsonData) {
-     <div>Loading...</div>;
+    return <div>Loading...</div>; // Moved return statement inside the function body
   }
-};
+
+  const firstComment = jsonData.comments[0];
+
   return (
     <>
       <div className="card-container">
@@ -36,7 +39,8 @@ const CommentCard = () => {
             </div>
             <div className="comment-content">
               <img src={profilePicAmy} alt="poster" />
-              <p>fetch JSON data here for comment</p>
+              {/* Render your fetched data here */}
+              <p>{firstComment.content}</p>
             </div>
           </div>
           <div className="reply-comment">
