@@ -6,7 +6,7 @@ const ButtonCard = () => {
     <div>
       <div className="button-card">
         <button>+</button>
-        <p>Likes</p>
+        <p></p>
         <button>-</button>
       </div>
     </div>

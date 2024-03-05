@@ -8,8 +8,7 @@ body {
   margin: auto;
   margin-top: 20px;
   justify-content: center;
-  max-width: 60%;
-  width: max-content;
+  width: 600px;
 }
 .comment-content {
   display: flex;
