@@ -1,0 +1,32 @@
+body {
+  background: hsl(223, 19%, 93%);
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  justify-content: center;
+  max-width: 60%;
+  width: max-content;
+}
+.comment-content {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: gray;
+}
+.comment-card {
+  background: white;
+  border-radius: 5px;
+}
+img {
+  max-width: 40px;
+  padding: 10px;
+}
+
+.comment-card {
+  display: flex;
+  align-items: center;
+}

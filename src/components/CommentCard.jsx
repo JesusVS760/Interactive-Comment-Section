@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import profilePicAmy from "../images/avatars/image-amyrobson.png";
 import ButtonCard from "./ButtonCard";
+import ReplyCard from "./ReplyCard";
 import "./CommentCard.css";
 import data from "../data.json";
 
@@ -38,15 +39,13 @@ const CommentCard = () => {
               <ButtonCard />
             </div>
             <div className="comment-content">
-              <img src={profilePicAmy} alt="poster" />
+              <img src={profilePicAmy} alt="poster" className="amyProfile" />
               {/* Render your fetched data here */}
               <p>{firstComment.content}</p>
             </div>
           </div>
-          <div className="reply-comment">
-            <img src="" alt="your profile" />
-            <textarea className="reply-area">add comment here...</textarea>
-            <button className="reply-button">REPLY</button>
+          <div>
+            <ReplyCard />
           </div>
         </div>
       </div>

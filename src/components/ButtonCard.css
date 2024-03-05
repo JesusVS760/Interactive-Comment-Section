@@ -1,0 +1,23 @@
+.button-card {
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background: hsl(228, 33%, 97%);
+  border: 1px solid black;
+  margin-right: 15px;
+}
+.button-card button {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: hsl(238, 40%, 52%);
+  font-weight: bold;
+}
+.button-card p {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
