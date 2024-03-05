@@ -25,7 +25,7 @@ const CommentCard = () => {
   }, []);
 
   if (!jsonData) {
-    return <div>Loading...</div>; // Moved return statement inside the function body
+    return <div>Loading...</div>;
   }
 
   const firstComment = jsonData.comments[0];
@@ -39,7 +39,10 @@ const CommentCard = () => {
               <ButtonCard />
             </div>
             <div className="comment-content">
-              <img src={profilePicAmy} alt="poster" className="amyProfile" />
+              <div className="comment-content-header">
+                <img src={profilePicAmy} alt="poster" className="amyProfile" />
+                <p>{firstComment.user.username}</p>
+              </div>
               {/* Render your fetched data here */}
               <p>{firstComment.content}</p>
             </div>
