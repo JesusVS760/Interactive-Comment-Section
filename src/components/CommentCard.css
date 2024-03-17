@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   font-size: 1rem;
   color: gray;
+  margin-left: 20px;
 }
 .comment-card {
   background: white;
@@ -33,5 +34,32 @@ img {
 .comment-content-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  margin-right: auto;
+  margin-left: -15px;
+}
+.comment-content-header p {
+  color: black;
+  font-weight: 500;
+}
+.reply {
+  display: flex;
+  align-items: center;
+  margin-left: 150%;
+}
+.reply button {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: hsl(238, 40%, 52%);
+  font-weight: 700;
+  cursor: pointer;
+}
+.reply img {
+  padding: 0;
+  cursor: pointer;
+}
+.amyProfile {
+  display: flex;
+  justify-content: space-between;
 }
