@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import profilePicAmy from "../images/avatars/image-amyrobson.png";
 import profilePicMax from "../images/avatars/image-maxblagun.png";
 import ButtonCard from "./ButtonCard";
+import ExistingReply from "./ExistingReply";
 import ReplyCard from "./ReplyCard";
 import ReplyArrow from "../images/icon-reply.svg";
 import "./CommentCard.css";
@@ -9,13 +10,17 @@ import data from "../data.json";
 
 const CommentCard = () => {
   const [jsonData, setJsonData] = useState(null);
-  const [replyContent, setReplyContent] = useState("");
-  const [selectedCommentId, setSelectedCommentId] = useState(null);
+  const [replyVisibility, setReplyVisibility] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setJsonData(data);
+        const initialReplyVisibility = {};
+        data.comments.forEach((comment) => {
+          initialReplyVisibility[comment.id] = false;
+        });
+        setReplyVisibility(initialReplyVisibility);
       } catch (error) {
         console.error("Error fetching JSON data:", error);
       }
@@ -24,19 +29,11 @@ const CommentCard = () => {
     fetchData();
   }, []);
 
-  const handleReplyChange = (e) => {
-    setReplyContent(e.target.value);
-  };
-
-  const handleSubmitReply = () => {
-    console.log(
-      "Reply submitted for comment ID",
-      selectedCommentId,
-      ":",
-      replyContent
-    );
-    setReplyContent("");
-    setSelectedCommentId(null);
+  const toggleReply = (commentId) => {
+    setReplyVisibility((prevState) => ({
+      ...prevState,
+      [commentId]: !prevState[commentId],
+    }));
   };
 
   if (!jsonData) {
@@ -70,30 +67,25 @@ const CommentCard = () => {
                   <p>{comment.user.username}</p>
                   <div className="reply">
                     <img
-                      onClick={() => setSelectedCommentId(comment.id)}
+                      onClick={() => toggleReply(comment.id)}
                       src={ReplyArrow}
                       alt="reply-arrow"
                     />
-                    <button onClick={() => setSelectedCommentId(comment.id)}>
+                    <button onClick={() => toggleReply(comment.id)}>
                       Reply
                     </button>
                   </div>
                 </div>
                 <p>{comment.content}</p>
               </div>
+              {replyVisibility[comment.id] && <ReplyCard />}
             </div>
           ))}
+          <div className="ExistingComment">
+            <ExistingReply />
+          </div>
         </div>
       </div>
-      {selectedCommentId !== null && (
-        <ReplyCard
-          key={selectedCommentId}
-          commentId={selectedCommentId}
-          onReplySubmit={handleSubmitReply}
-          onReplyChange={handleReplyChange}
-          replyContent={replyContent}
-        />
-      )}
     </>
   );
 };
