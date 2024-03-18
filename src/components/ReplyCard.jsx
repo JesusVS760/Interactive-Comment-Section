@@ -10,7 +10,7 @@ const ReplyCard = ({ id }) => {
   };
 
   return (
-    <div>
+    <div className="reply-container">
       <div className="reply-comment">
         <img src={myProfilePic} alt="your profile" />
         <button onClick={toggleVisibility}>Reply</button>
@@ -18,7 +18,7 @@ const ReplyCard = ({ id }) => {
       {isVisible && (
         <div className="reply-area">
           <textarea>Add comment here...</textarea>
-          <button>REPLY</button>
+          <button>Submit</button>
         </div>
       )}
     </div>

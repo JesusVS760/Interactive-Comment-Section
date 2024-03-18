@@ -73,3 +73,7 @@ img {
   background: white;
   border-radius: 5px;
 }
+.reply-container {
+  margin-top: 20px;
+  display: flex;
+}
