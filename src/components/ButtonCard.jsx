@@ -3,13 +3,19 @@ import "./ButtonCard.css";
 
 const ButtonCard = () => {
   const [count, setCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
 
   const addCount = () => {
-    setCount(count + 1);
+    if (!isLiked) {
+      setCount(count + 1);
+      setIsLiked(true);
+    }
   };
 
   const subtractCount = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
 
   return (

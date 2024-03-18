@@ -16,8 +16,10 @@ const CommentCard = () => {
     const replyComment = document.querySelector(".reply-comment");
     if (isVisible) {
       replyComment.style.visibility = "hidden";
+      replyComment.style.display = "none";
     } else {
       replyComment.style.visibility = "visible";
+      replyComment.style.display = "block";
     }
   };
 
@@ -93,6 +95,9 @@ const CommentCard = () => {
               {/* Render your fetched data here */}
               <p>{SecondComment.content}</p>
             </div>
+          </div>
+          <div>
+            <ReplyCard />
           </div>
         </div>
       </div>
