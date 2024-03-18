@@ -11,7 +11,8 @@ body {
   justify-content: center;
   width: 600px;
 }
-.comment-content {
+.comment-content,
+.existing-replies {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -19,7 +20,8 @@ body {
   color: gray;
   margin-left: 20px;
 }
-.comment-card {
+.comment-card,
+.existing-replies {
   background: white;
   border-radius: 5px;
 }

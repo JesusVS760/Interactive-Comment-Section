@@ -53,13 +53,13 @@ const CommentCard = () => {
                 <div className="comment-content-header">
                   <img
                     src={
-                      comment.user.username === "Amy Robson"
+                      comment.user.username === "amyrobson"
                         ? profilePicAmy
                         : profilePicMax
                     }
                     alt="poster"
                     className={
-                      comment.user.username === "Amy Robson"
+                      comment.user.username === "amyrobson"
                         ? "amyProfile"
                         : "maxProfile"
                     }

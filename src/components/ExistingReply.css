@@ -1,0 +1,5 @@
+.existing-replies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
