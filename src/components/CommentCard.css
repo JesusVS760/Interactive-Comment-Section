@@ -30,6 +30,7 @@ img {
 .comment-card {
   display: flex;
   align-items: center;
+  padding: 2px;
 }
 .comment-content-header {
   display: flex;
@@ -62,4 +63,12 @@ img {
 .amyProfile {
   display: flex;
   justify-content: space-between;
+}
+
+.comment-card-2 {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
 }

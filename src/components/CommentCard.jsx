@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import profilePicAmy from "../images/avatars/image-amyrobson.png";
+import profilePicMax from "../images/avatars/image-maxblagun.png";
 import ButtonCard from "./ButtonCard";
 import ReplyCard from "./ReplyCard";
 import ReplyArrow from "../images/icon-reply.svg";
@@ -41,6 +42,7 @@ const CommentCard = () => {
   }
 
   const firstComment = jsonData.comments[0];
+  const SecondComment = jsonData.comments[1];
 
   return (
     <>
@@ -69,6 +71,28 @@ const CommentCard = () => {
           </div>
           <div>
             <ReplyCard />
+          </div>
+          {/* SECOND MAIN COMMENT */}
+          <div className="comment-card-2">
+            <div className="comment-likes">
+              <ButtonCard />
+            </div>
+            <div className="comment-content">
+              <div className="comment-content-header">
+                <img src={profilePicMax} alt="poster" className="maxProfile" />
+                <p>{SecondComment.user.username}</p>
+                <div className="reply">
+                  <img
+                    onClick={handleClick}
+                    src={ReplyArrow}
+                    alt="reply-arrow"
+                  />
+                  <button onClick={handleClick}>Reply</button>
+                </div>
+              </div>
+              {/* Render your fetched data here */}
+              <p>{SecondComment.content}</p>
+            </div>
           </div>
         </div>
       </div>

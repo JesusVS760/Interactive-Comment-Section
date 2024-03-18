@@ -13,12 +13,18 @@
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
-  color: hsl(238, 40%, 52%);
+  color: hsl(239, 57%, 85%);
   font-weight: bold;
   padding: 5px;
 }
+.buttonAdd {
+  color: black;
+}
 .button-card p {
+  display: flex;
   padding: 0;
   margin: 0;
-  color: #fff;
+  margin-left: 5px;
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
 }
