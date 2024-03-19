@@ -9,7 +9,7 @@ body {
   margin-top: 20px;
   flex-direction: column;
   justify-content: center;
-  width: 600px;
+  width: 625px;
 }
 .comment-content,
 .existing-replies {
@@ -51,7 +51,8 @@ img {
   align-items: center;
   margin-left: 150%;
 }
-.reply button {
+.reply button,
+.existing-reply {
   border: none;
   outline: none;
   background: transparent;

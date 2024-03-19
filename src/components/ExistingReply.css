@@ -1,5 +1,34 @@
-.existing-replies {
+.existing-comment {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.existing-replies {
+  max-width: 500px;
+  padding: 10px;
+}
+.existing-comment-likes {
+  margin-right: 10px;
+}
+.existing-content {
+  display: inline-block;
+  align-items: center;
+  flex-direction: column;
+}
+.existing-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.existing-reply {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 15px;
+}
+.at-sign-section .at-sign {
+  color: hsl(238, 40%, 52%);
+  font-weight: 400;
+  cursor: pointer;
 }
