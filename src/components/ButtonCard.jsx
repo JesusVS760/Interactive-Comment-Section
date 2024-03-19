@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ButtonCard.css";
 
-const ButtonCard = () => {
-  const [count, setCount] = useState(0);
+const ButtonCard = ({ initialCount }) => {
+  const [count, setCount] = useState(initialCount);
   const [isLiked, setIsLiked] = useState(false);
 
   const addCount = () => {

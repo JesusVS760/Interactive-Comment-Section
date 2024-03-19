@@ -34,7 +34,7 @@ const ExistingReply = () => {
         {comment && (
           <div key={comment.id} className="existing-comment">
             <div className="existing-comment-likes">
-              <ButtonCard />
+              <ButtonCard initialCount={comment.score} />
             </div>
             <div className="existing-content">
               <div className="existing-content-header">

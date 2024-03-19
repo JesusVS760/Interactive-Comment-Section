@@ -47,7 +47,7 @@ const CommentCard = () => {
           {jsonData.comments.map((comment) => (
             <div key={comment.id} className="comment-card">
               <div className="comment-likes">
-                <ButtonCard />
+                <ButtonCard initialCount={comment.score} />
               </div>
               <div className="comment-content">
                 <div className="comment-content-header">
