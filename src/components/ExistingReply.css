@@ -29,6 +29,10 @@
 }
 .at-sign-section .at-sign {
   color: hsl(238, 40%, 52%);
-  font-weight: 400;
+  font-weight: 700;
   cursor: pointer;
+}
+.existing-container {
+  display: flex;
+  justify-content: flex-end;
 }

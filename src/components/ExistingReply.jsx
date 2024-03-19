@@ -29,7 +29,7 @@ const ExistingReply = () => {
   }
 
   return (
-    <div>
+    <div className="existing-container">
       <div className="existing-replies">
         {comment && (
           <div key={comment.id} className="existing-comment">
@@ -39,7 +39,7 @@ const ExistingReply = () => {
             <div className="existing-content">
               <div className="existing-content-header">
                 <img src={Ramsesmiron} alt="profile" />
-                <p>{comment.user.username}</p>
+                <p className="existing-username">{comment.user.username}</p>
                 <div className="existing-reply">
                   <img src={ReplyArrow} alt="reply-arrow" />
                   <p>Reply</p>
