@@ -4,8 +4,9 @@
   justify-content: center;
 }
 .existing-replies {
-  max-width: 500px;
+  max-width: 550px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 .existing-comment-likes {
   margin-right: 10px;

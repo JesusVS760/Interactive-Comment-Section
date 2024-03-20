@@ -82,7 +82,10 @@ const CommentCard = () => {
             </div>
           ))}
           <div className="ExistingComment">
-            <ExistingReply />
+            <ExistingReply commentId={3} />
+          </div>
+          <div>
+            <ExistingReply commentId={4} />
           </div>
         </div>
       </div>

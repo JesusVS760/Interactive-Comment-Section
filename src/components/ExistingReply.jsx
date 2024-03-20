@@ -5,7 +5,7 @@ import ReplyArrow from "../images/icon-reply.svg";
 import dataInfo from "../data.json";
 import "./ExistingReply.css";
 
-const ExistingReply = () => {
+const ExistingReply = ({ commentId }) => {
   const [jsonData, setJsonData] = useState(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ExistingReply = () => {
     return <div>Loading...</div>;
   }
 
-  const commentId = 3;
+  //  const commentId = 3;
   const secondComment = jsonData.comments[1];
   const comment = secondComment.replies.find((reply) => reply.id === commentId);
 

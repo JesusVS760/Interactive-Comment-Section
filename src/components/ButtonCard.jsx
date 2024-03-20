@@ -4,6 +4,7 @@ import "./ButtonCard.css";
 const ButtonCard = ({ initialCount }) => {
   const [count, setCount] = useState(initialCount);
   const [isLiked, setIsLiked] = useState(false);
+  const [isUnliked, setIsUnliked] = useState(false);
 
   const addCount = () => {
     if (!isLiked) {
@@ -14,7 +15,10 @@ const ButtonCard = ({ initialCount }) => {
 
   const subtractCount = () => {
     if (count > 0) {
-      setCount(count - 1);
+      if (!isUnliked) {
+        setCount(count - 1);
+        setIsUnliked(true);
+      }
     }
   };
 
