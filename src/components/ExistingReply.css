@@ -47,3 +47,14 @@
   padding: 2px 7px;
   background-color: hsl(238, 40%, 52%);
 }
+.delete-button {
+  margin-left: 125px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: hsl(358, 79%, 66%);
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

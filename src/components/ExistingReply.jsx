@@ -3,6 +3,7 @@ import ButtonCard from "./ButtonCard";
 import Ramsesmiron from "../images/avatars/image-ramsesmiron.png";
 import juliusomo from "../images/avatars/image-juliusomo.png";
 import ReplyArrow from "../images/icon-reply.svg";
+import trashBin from "../images/icon-delete.svg";
 import dataInfo from "../data.json";
 import "./ExistingReply.css";
 
@@ -46,9 +47,17 @@ const ExistingReply = ({ commentId }) => {
                 )}
 
                 <p className="existing-username">{comment.user.username}</p>
-                {comment.user.username == "juliusomo" ? (
-                  <span className="your-reply">you</span>
-                ) : null}
+                {comment.user.username === "juliusomo" && (
+                  <>
+                    <span className="your-reply">you</span>
+
+                    <button className="delete-button">
+                      <img src={trashBin} alt="trash" />
+                      Delete
+                    </button>
+                  </>
+                )}
+
                 <div className="existing-reply">
                   <img src={ReplyArrow} alt="reply-arrow" />
                   <p>Reply</p>
