@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Ramsesmiron from "../images/avatars/image-ramsesmiron.png";
 import ButtonCard from "./ButtonCard";
+import Ramsesmiron from "../images/avatars/image-ramsesmiron.png";
+import juliusomo from "../images/avatars/image-juliusomo.png";
 import ReplyArrow from "../images/icon-reply.svg";
 import dataInfo from "../data.json";
 import "./ExistingReply.css";
@@ -16,7 +17,7 @@ const ExistingReply = ({ commentId }) => {
     return <div>Loading...</div>;
   }
 
-  //  const commentId = 3;
+  const checkAtSymbol = 3;
   const secondComment = jsonData.comments[1];
   const comment = secondComment.replies.find((reply) => reply.id === commentId);
 
@@ -38,7 +39,12 @@ const ExistingReply = ({ commentId }) => {
             </div>
             <div className="existing-content">
               <div className="existing-content-header">
-                <img src={Ramsesmiron} alt="profile" />
+                {comment.user.username == "ramsesmiron" ? (
+                  <img src={Ramsesmiron} alt="image" />
+                ) : (
+                  <img src={juliusomo} alt="image" />
+                )}
+
                 <p className="existing-username">{comment.user.username}</p>
                 <div className="existing-reply">
                   <img src={ReplyArrow} alt="reply-arrow" />
@@ -47,7 +53,7 @@ const ExistingReply = ({ commentId }) => {
               </div>
               <p className="at-sign-section">
                 <span className="at-sign">
-                  <span>@</span>
+                  {checkAtSymbol === comment.id ? <span>@</span> : null}
                   {ThirdComment ? ThirdComment.user.username : ""}
                 </span>
                 <span className="reply-content"> {comment.content}</span>
