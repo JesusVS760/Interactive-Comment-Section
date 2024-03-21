@@ -46,6 +46,9 @@ const ExistingReply = ({ commentId }) => {
                 )}
 
                 <p className="existing-username">{comment.user.username}</p>
+                {comment.user.username == "juliusomo" ? (
+                  <span className="your-reply">you</span>
+                ) : null}
                 <div className="existing-reply">
                   <img src={ReplyArrow} alt="reply-arrow" />
                   <p>Reply</p>
@@ -53,8 +56,8 @@ const ExistingReply = ({ commentId }) => {
               </div>
               <p className="at-sign-section">
                 <span className="at-sign">
-                  {checkAtSymbol === comment.id ? <span>@</span> : null}
-                  {ThirdComment ? ThirdComment.user.username : ""}
+                  <span>@</span>
+                  {ThirdComment ? ThirdComment.user.username : "ramsesmiron"}
                 </span>
                 <span className="reply-content"> {comment.content}</span>
               </p>

@@ -37,3 +37,13 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.your-reply {
+  color: white;
+  margin-left: 10px;
+  width: 25px;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  padding: 2px 7px;
+  background-color: hsl(238, 40%, 52%);
+}
