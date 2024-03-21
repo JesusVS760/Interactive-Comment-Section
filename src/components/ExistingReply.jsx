@@ -6,6 +6,7 @@ import ReplyArrow from "../images/icon-reply.svg";
 import trashBin from "../images/icon-delete.svg";
 import dataInfo from "../data.json";
 import "./ExistingReply.css";
+import DeleteButton from "./DeleteButton";
 
 const ExistingReply = ({ commentId }) => {
   const [jsonData, setJsonData] = useState(null);
@@ -30,6 +31,10 @@ const ExistingReply = ({ commentId }) => {
     ThirdComment = jsonData.comments[priorCommentIndex];
   }
 
+  const handleDelete = () => {
+    return <DeleteButton onDelete={() => onDelete(commentId)} />;
+  };
+
   return (
     <div className="existing-container">
       <div className="existing-replies">
@@ -51,7 +56,7 @@ const ExistingReply = ({ commentId }) => {
                   <>
                     <span className="your-reply">you</span>
 
-                    <button className="delete-button">
+                    <button onClick={handleDelete} className="delete-button">
                       <img src={trashBin} alt="trash" />
                       Delete
                     </button>
