@@ -10,6 +10,7 @@ import DeleteButton from "./DeleteButton";
 
 const ExistingReply = ({ commentId }) => {
   const [jsonData, setJsonData] = useState(null);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   useEffect(() => {
     setJsonData(dataInfo);
@@ -19,7 +20,6 @@ const ExistingReply = ({ commentId }) => {
     return <div>Loading...</div>;
   }
 
-  const checkAtSymbol = 3;
   const secondComment = jsonData.comments[1];
   const comment = secondComment.replies.find((reply) => reply.id === commentId);
 
@@ -32,7 +32,12 @@ const ExistingReply = ({ commentId }) => {
   }
 
   const handleDelete = () => {
-    return <DeleteButton onDelete={() => onDelete(commentId)} />;
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleConfirmDelete = () => {
+    console.log("Comment deleted!");
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -45,7 +50,7 @@ const ExistingReply = ({ commentId }) => {
             </div>
             <div className="existing-content">
               <div className="existing-content-header">
-                {comment.user.username == "ramsesmiron" ? (
+                {comment.user.username === "ramsesmiron" ? (
                   <img src={Ramsesmiron} alt="image" />
                 ) : (
                   <img src={juliusomo} alt="image" />
@@ -77,6 +82,9 @@ const ExistingReply = ({ commentId }) => {
               </p>
             </div>
           </div>
+        )}
+        {showDeleteConfirmation && (
+          <DeleteButton onDelete={handleConfirmDelete} />
         )}
       </div>
     </div>

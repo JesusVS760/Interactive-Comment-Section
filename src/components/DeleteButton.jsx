@@ -4,6 +4,7 @@ const DeleteButton = ({ onDelete }) => {
   const handleDelete = () => {
     onDelete();
   };
+
   return (
     <div className="delete-container">
       <div className="delete-card">
