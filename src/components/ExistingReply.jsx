@@ -36,7 +36,16 @@ const ExistingReply = ({ commentId }) => {
   };
 
   const handleConfirmDelete = () => {
-    console.log("Comment deleted!");
+    const updatedComments = jsonData.comments.map((c) => ({
+      ...c,
+      replies: c.replies.filter((r) => r.id !== commentId),
+    }));
+
+    setJsonData({
+      ...jsonData,
+      comments: updatedComments,
+    });
+
     setShowDeleteConfirmation(false);
   };
 
