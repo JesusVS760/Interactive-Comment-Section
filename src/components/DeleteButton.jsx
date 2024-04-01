@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import "./DeleteButton.css";
 
 const DeleteButton = ({ onDelete }) => {
+  const [updateDelete, setUpdateDelete] = useState(false);
+
   const handleDelete = () => {
     onDelete();
+    setUpdateDelete(true);
   };
 
   return (
@@ -15,7 +19,12 @@ const DeleteButton = ({ onDelete }) => {
         </p>
         <div className="button-choices">
           <button className="cancel-button">NO, CANCEL</button>
-          <button onClick={handleDelete} className="delete-button">
+          <button
+            onClick={handleDelete}
+            className={`delete-button ${
+              updateDelete ? "delete-button-active" : ""
+            }`}
+          >
             YES, DELETE
           </button>
         </div>

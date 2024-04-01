@@ -1,0 +1,43 @@
+body {
+  background-color: gray;
+}
+.delete-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  background: #fff;
+}
+.delete-card {
+  border-radius: 10px;
+  padding: 15px 15px;
+}
+.delete-card h1 {
+  font-size: 1.5rem;
+}
+.delete-card p {
+  width: 90%;
+  font-size: 1rem;
+}
+.button-choices {
+  display: flex;
+  justify-content: center;
+}
+.button-choices button {
+  border: none;
+  color: white;
+}
+.cancel-button {
+  background: gray;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.delete-button-active {
+  border-radius: 5px;
+  color: black;
+  padding: 5px 8px;
+  background: hsl(358, 79%, 66%);
+}
+.delete-button {
+}
