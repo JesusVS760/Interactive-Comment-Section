@@ -80,10 +80,17 @@ img {
 }
 .post-container {
   background: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
+  width: inherit;
+  max-width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.post-container button {
+.post-container img {
+}
+.post-container > button {
   border: none;
   outline: none;
   padding: 10px;
@@ -93,4 +100,6 @@ img {
   color: white;
   font-weight: 700;
   cursor: pointer;
+}
+.send-button {
 }

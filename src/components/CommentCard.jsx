@@ -92,7 +92,7 @@ const CommentCard = () => {
         </div>
         <div className="post-container">
           <img src={juliusomo} alt="postPic" />
-          <textarea id="" cols="60" rows="3"></textarea>
+          <textarea id="" cols="50" rows="3" className="text-area"></textarea>
           <button className="send-button">Send</button>
         </div>
       </div>

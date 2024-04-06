@@ -42,5 +42,8 @@ body {
   padding: 5px 8px;
   background: hsl(358, 79%, 66%);
 }
+textarea {
+  resize: none;
+}
 .delete-button {
 }
