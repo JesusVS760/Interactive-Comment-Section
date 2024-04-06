@@ -78,3 +78,19 @@ img {
   margin-top: 20px;
   display: flex;
 }
+.post-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.post-container button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: hsl(238, 40%, 52%);
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}

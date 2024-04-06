@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import profilePicAmy from "../images/avatars/image-amyrobson.png";
 import profilePicMax from "../images/avatars/image-maxblagun.png";
 import ButtonCard from "./ButtonCard";
+import juliusomo from "../images/avatars/image-juliusomo.png";
+
 import ExistingReply from "./ExistingReply";
 import ReplyCard from "./ReplyCard";
 import ReplyArrow from "../images/icon-reply.svg";
@@ -87,6 +89,11 @@ const CommentCard = () => {
           <div>
             <ExistingReply commentId={4} />
           </div>
+        </div>
+        <div className="post-container">
+          <img src={juliusomo} alt="postPic" />
+          <textarea id="" cols="60" rows="3"></textarea>
+          <button className="send-button">Send</button>
         </div>
       </div>
     </>
