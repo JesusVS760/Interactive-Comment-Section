@@ -3,7 +3,6 @@ import profilePicAmy from "../images/avatars/image-amyrobson.png";
 import profilePicMax from "../images/avatars/image-maxblagun.png";
 import ButtonCard from "./ButtonCard";
 import juliusomo from "../images/avatars/image-juliusomo.png";
-
 import ExistingReply from "./ExistingReply";
 import ReplyCard from "./ReplyCard";
 import ReplyArrow from "../images/icon-reply.svg";
@@ -13,7 +12,7 @@ import data from "../data.json";
 const CommentCard = () => {
   const [jsonData, setJsonData] = useState(null);
   const [replyVisibility, setReplyVisibility] = useState({});
-  const [posts, setPosts] = useState(data);
+  const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState("");
 
   useEffect(() => {
@@ -34,13 +33,13 @@ const CommentCard = () => {
   }, []);
 
   useEffect(() => {
-    // Update the JSON file when posts state changes
-    // This is a simplified example, consider using a more robust solution for production
     localStorage.setItem("posts", JSON.stringify(posts));
   }, [posts]);
 
   const handlePostSubmit = () => {
+    console.log("Submitting post:", newPost);
     const newPosts = [...posts, { id: posts.length + 1, text: newPost }];
+    console.log("New posts:", newPosts);
     setPosts(newPosts);
     setNewPost("");
   };
@@ -104,7 +103,33 @@ const CommentCard = () => {
             <ExistingReply commentId={4} />
           </div>
         </div>
+        <div className="post-commentS">
+          {posts.map((post) => (
+            <div key={post.id} className="comment-card">
+              <div className="comment-likes">
+                <ButtonCard initialCount={post.score} />
+              </div>
+              <div className="comment-content">
+                <div className="comment-content-header">
+                  <img src={juliusomo} alt="poster" className="juliusProfile" />
+                  <p>Juliusomo</p>
+                  {/* <div className="reply">
+                    <img
+                      onClick={() => toggleReply(post.id)}
+                      src={ReplyArrow}
+                      alt="reply-arrow"
+                    />
+                    <button onClick={() => toggleReply(post.id)}>Reply</button>
+                  </div> */}
+                </div>
+                <p>{post.text}</p>
+              </div>
+              {replyVisibility[post.id] && <ReplyCard />}
+            </div>
+          ))}
+        </div>
         <div className="post-container">
+          <img src={juliusomo} alt="posterImage" />
           <textarea
             value={newPost}
             onChange={(e) => setNewPost(e.target.value)}
@@ -115,11 +140,6 @@ const CommentCard = () => {
           <button onClick={handlePostSubmit} className="send-button">
             Send
           </button>
-          {posts.map((post) => (
-            <div key={post.id}>
-              <p>{post.text}</p>
-            </div>
-          ))}
         </div>
       </div>
     </>
