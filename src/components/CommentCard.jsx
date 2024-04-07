@@ -13,6 +13,8 @@ import data from "../data.json";
 const CommentCard = () => {
   const [jsonData, setJsonData] = useState(null);
   const [replyVisibility, setReplyVisibility] = useState({});
+  const [posts, setPosts] = useState(data);
+  const [newPost, setNewPost] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +32,18 @@ const CommentCard = () => {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    // Update the JSON file when posts state changes
+    // This is a simplified example, consider using a more robust solution for production
+    localStorage.setItem("posts", JSON.stringify(posts));
+  }, [posts]);
+
+  const handlePostSubmit = () => {
+    const newPosts = [...posts, { id: posts.length + 1, text: newPost }];
+    setPosts(newPosts);
+    setNewPost("");
+  };
 
   const toggleReply = (commentId) => {
     setReplyVisibility((prevState) => ({
@@ -91,9 +105,21 @@ const CommentCard = () => {
           </div>
         </div>
         <div className="post-container">
-          <img src={juliusomo} alt="postPic" />
-          <textarea id="" cols="50" rows="3" className="text-area"></textarea>
-          <button className="send-button">Send</button>
+          <textarea
+            value={newPost}
+            onChange={(e) => setNewPost(e.target.value)}
+            cols="50"
+            rows="3"
+            className="text-area"
+          ></textarea>
+          <button onClick={handlePostSubmit} className="send-button">
+            Send
+          </button>
+          {posts.map((post) => (
+            <div key={post.id}>
+              <p>{post.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>

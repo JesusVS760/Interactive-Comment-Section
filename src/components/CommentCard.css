@@ -91,7 +91,7 @@ img {
   box-sizing: border-box;
 }
 
-.post-container > button {
+.post-container button {
   border: none;
   outline: none;
   padding: 10px 20px;
@@ -102,6 +102,4 @@ img {
   font-weight: 700;
   cursor: pointer;
   margin-bottom: 35px;
-}
-.send-button {
 }

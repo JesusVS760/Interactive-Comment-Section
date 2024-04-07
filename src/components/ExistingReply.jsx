@@ -69,7 +69,6 @@ const ExistingReply = ({ commentId }) => {
                 {comment.user.username === "juliusomo" && (
                   <>
                     <span className="your-reply">you</span>
-
                     <button onClick={handleDelete} className="delete-button">
                       <img src={trashBin} alt="trash" />
                       Delete
